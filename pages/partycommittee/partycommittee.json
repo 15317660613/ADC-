@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+     },
+  "navigationBarTitleText": "我的安排",
+  "enablePullDownRefresh": true, 
+  "backgroundTextStyle": "dark", 
+  "onReachBottomDistance": 50 ,
+  "navigationBarBackgroundColor": "#E60012",
+  "navigationBarTextStyle": "white"
+}

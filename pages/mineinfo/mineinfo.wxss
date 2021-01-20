@@ -1,0 +1,98 @@
+/* pages/mineinfo/mineinfo.wxss */
+page{
+   background: #e4e4e4;
+
+}
+.top{
+box-sizing: border-box;
+background-color: #fff;
+padding: 20rpx;
+border-radius: 8px;
+margin: 15rpx;
+}
+.bottom{
+  box-sizing: border-box;
+background-color: #fff;
+ padding: 20rpx;
+border-radius: 8px;
+margin: 15rpx;
+}
+.key1{
+  font-size: 29rpx;
+  color: #000;
+}
+.key{
+  font-size: 28rpx;
+  color: #000;
+}
+.value{
+ font-size: 26rpx;
+  color: #999;
+}
+.item1{
+   display: flex;
+   justify-content: space-between;
+  height: 60rpx;
+ 
+ border-bottom: 1rpx solid #ebeaea;
+  
+  padding: 15rpx;
+  margin-bottom: 10rpx;
+ 
+  text-align: center;
+  
+  align-items: center;
+}
+
+.item{
+  display: flex;
+   justify-content: space-between;
+  height: 60rpx;
+
+  padding: 15rpx;
+
+  align-items: center;
+  text-align: center;
+}
+.input-group{
+ flex: 1;
+  height: 60rpx;
+   border-style: solid;  
+  border-radius: 5rpx;
+  border-color:#1879E0;
+  border-width:1rpx;
+  margin-left: 15rpx;
+}
+
+.input-group1{
+ flex: 1;
+  height: 60rpx;
+   border-style: solid;  
+  border-radius: 5rpx;
+  border-color:#e4e4e4;
+  border-width:1rpx;
+    margin-left: 15rpx;
+}
+
+.input{
+   width: 100%;
+  min-height: 60rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  text-align: left;
+  padding-left: 30rpx;
+  color: #333;
+  
+}
+
+.submit-form {
+  width: 97%;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-top: 80rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: #adadad;
+}

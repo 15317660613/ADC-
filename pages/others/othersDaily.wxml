@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<view class='calendar-index'>
+  <view class="top-background">
+  </view>
+    <view hidden='{{leftWeek === ""}}'>
+      <view bindtap='backStep' class="block-left block-common">
+        <text hidden='{{index >= nowWeekIndex}}' class='top-text'>{{leftWeek.name}}\n</text>
+        <text class='bottom-text'>{{leftWeek.content}}</text>
+        <text class='bottom-text' hidden='{{leftWeek.content != undefined}}'>— —</text>
+      </view>
+      <view class="block-center block-common">
+        <text class='top-center-text'>{{centerWeek.name}}\n</text>
+        <text class='bottom-text'>{{centerWeek.content}}</text>
+      </view>
+      <view bindtap='frontStep' class="block-right block-common">
+        <text class='top-text'>{{rightWeek.name}}\n</text>
+        <text class='bottom-text'>{{rightWeek.content}}</text>
+        <text class='bottom-text' hidden='{{rightWeek.content != undefined}}'>— —</text>
+      </view>
+    </view>
+  <swiper class='swiper-height' bindchange='onSlideChange' current="{{current}}" bindanimationfinish="onSlideChangeEnd">
+    <block wx:for="{{dailys}}" wx:key="index">
+      <swiper-item>
+          <view class='table-outer' hidden='{{dailys.length === 2}}'>
+            <view class='table'>
+              <view class='tr'>
+                <view class='t-left height-top'></view>
+                <view class='th height-top'>上午</view>
+                <view class='th height-top'>下午</view>
+              </view>
+              <view wx:for="{{item}}"  wx:key="weeknum" class='tr'>
+                <view class='t-left height-bottom'>{{item.weeknum+item.day}}</view>
+                <view id='{{item.AM.id}}' class='td height-bottom' data-year='{{item.year}}' data-weeknum="{{index}}" data-time="0" bindtap='openModal' style='position:relative'>
+                <image src='/assects/detail.png' class="detailImage" mode="aspectFit" wx:if="{{item.AM.scheduleDesc}}"></image>
+                  <view class='daily {{(item.AM.scheduleContent&&item.AM.scheduleContent.length>4)?"dailyLine":""}}'>{{item.AM.scheduleContent?item.AM.scheduleContent:""}}</view>
+                </view>
+                <view  id='{{item.PM.id}}' class='td height-bottom' data-year='{{item.year}}' data-weeknum="{{index}}" data-time="1"  bindtap='openModal' style='position:relative'>
+                  <image src='/assects/detail.png' class="detailImage" mode="aspectFit" wx:if="{{item.PM.scheduleDesc}}"></image>
+                  <view class='daily {{(item.PM.scheduleContent&&item.PM.scheduleContent.length>4)?"dailyLine":""}}'>{{item.PM?item.PM.scheduleContent:""}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<i-modal wx:if="{{ visible }}" visible="{{ visible }}"
+  show-ok="{{false}}" show-cancel="{{false}}">
+    <view>
+    <text class="title-left">11</text>
+      <text class='modal-title'>{{usname}}</text>
+      <icon type="clear" class='modal-close' size="20" bindtap='closeModal'/>
+      <view class='clear-float'></view>
+    </view>
+    <view class='date-select'>
+      <view class='before-daily'>
+        <!-- <text bindtap='beforeDaily'>{{left}}　　{{daily.preTitle}}</text> -->     <view class="icon-group">
+        <image  class="icon" src='/assects/qian.png'></image>
+        </view>
+        <view class="beforeDaily">
+        <text class="beforeDailytext" bindtap='beforeDaily'>{{daily.preTitle}}</text>
+        </view>
+      </view>
+      <view class='middle-daily'>
+        <text >{{daily.title}}</text>
+      </view>
+      <view class='next-daily'>
+        <!-- <text bindtap='afterDaily'>{{daily.postTitle}}　　{{right}}</text> -->
+         <view class="icon-group">
+        <image  class="icon" src='/assects/hou.png'></image>
+        </view>
+         <view class="afterDaily">
+         <text class="beforeDailytext" bindtap='afterDaily'>{{daily.postTitle}}</text>
+      </view>
+      </view>
+    </view>
+    <view class='modal-body'>
+      <text>日程安排:</text>
+      <textarea disabled="true" class='daily-plan' value="{{daily.scheduleContent}}"></textarea>
+      <text>日程详情:</text>
+       <view class='daily-detail'><view wx:for="{{daily.scheduleDetailEOs}}" wx:key="{{item.index}}" class='scheduleDetail'>{{item.timeLimit}} {{item.scheduleDetail?item.scheduleDetail:""}}</view>
+    </view>
+    </view>
+</i-modal>

@@ -1,0 +1,60 @@
+<!--pages/partycommitteedetail/partycommitteedetail.wxml-->
+<view>
+  <view class="top">
+<view class="title-group">  
+<view class="title-group-item">
+<text class="title">{{scheduleMeetEO.title}}</text>
+<text class="time">{{scheduleMeetEO.createTime}}</text>
+</view>
+<view>
+ <image bindtap="collect"  wx:if="{{scheduleMeetEO.extInfo2==='0'}}"wx:key="{{scheduleMeetEO.id}}" class='icon' src='/assects/shoucang2.png'></image> 
+
+        <image bindtap="uncollect" wx:else wx:key="{{scheduleMeetEO.id}}"  class='icon' src='/assects/shoucang3.png'></image> 
+</view>
+</view>
+  <text class="text-title">截止日期:</text>
+  
+  <view class="text-content">{{scheduleMeetEO.deadTime}}</view>
+
+  <text class="text-title">接收人:</text>
+  
+  <view class="text-content">{{scheduleMeetEO.extInfo}}</view>
+
+  <text class="text-title">参加地点:</text>
+  
+  <view class="text-content">{{scheduleMeetEO.address}}</view>
+    
+  <text class="text-title">事项:</text>
+
+  <textarea class="text-content" disabled="true" value="{{scheduleMeetEO.detail}}"></textarea>
+
+   <view  class="button-group" wx:if="{{scheduleMeetEO.status===0}}">
+    <button class='submit-form' size='80%' form-type='submit' bindtap="submit" style='background-color:#221B69'>完成</button>
+  </view>
+   <view wx:if="{{scheduleMeetEO.status===-1||scheduleMeetEO.status===-2}}">
+    <button class='submit-form' size='80%' form-type='submit'>完成</button>
+  </view>
+  <view wx:if="{{scheduleMeetEO.status===1}}">
+    <button class='submit-form' size='80%' bindtap="cancleSubmit" form-type='submit'>已完成</button>
+  </view>
+</view>
+  
+    <view class="top">
+ <view class="complete-group">
+<text class="title">完成情况</text>
+<view wx:for="{{scheduleMeetUserEOList}}" class="complete-content"> 
+<text wx:if="{{item.status===0||item.status===-1}}" wx:key="{{item.index}}" class="title3">待完成</text>
+
+<text wx:else wx:key="{{item.index}}" class="title2">已完成</text>
+
+<text class="text-title">{{item.receiveUserName}}</text>
+
+
+<text class="text-title2">{{item.finishedTime}}</text>
+</view>
+
+</view>
+
+
+    </view>
+  </view>

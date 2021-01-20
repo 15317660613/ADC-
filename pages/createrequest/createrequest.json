@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "创建请求",
+  "usingComponents": {
+    "i-modal": "../../../lib/modal/index3"
+  }
+  
+}

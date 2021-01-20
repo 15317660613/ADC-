@@ -1,0 +1,42 @@
+<!--logs.wxml-->
+<view class="calendar-others">
+  <view class='background-top'></view>
+  <view class='search-view'>
+    <view bindtap='showInput' class='false-search {{showSearch?"hide":""}}' style="color:#666666;line-height:72rpx;">
+      <icon size='32rpx' type='search'/>   
+      搜索
+    </view>
+    <icon size='32rpx' hidden='{{!showSearch}}' type='search' class='search-icon {{showSearch?"":"hide"}}'/>
+    <input focus='{{focused}}' hidden='{{!showSearch}}' bindconfirm='searchMember' class='search {{showSearch?"":"hide"}}' type='text' confirm-type="search" value='{{searchContent}}'></input>
+    <a bindtap='hideInput' class='search-cancel {{showSearch?"":"hide"}}'>取消</a>
+  </view>
+  <view wx:if="{{member.length!==0}}" class='people'>
+    <block wx:for="{{member}}" wx:key="index">
+      <view class='person' data-usname="{{item.usname}}"  data-mid="{{item.usid}}" bindtap="goSchedule">
+        <image mode='widthFix' class='avater' src="/assects/avater.png"></image>
+        <view class="name">{{item.usname}}</view>
+      </view>
+    </block>
+  </view>
+    <view wx:if="{{member.length === 0}}" class='people1'>
+          <!-- <view class='person1' data-usname="当前查询无结果" data-mid="0" bindtap="goSchedule"> -->
+            <!-- <image mode='widthFix' class='avater' src="/assects/avater.png"></image> -->
+            <!-- <view class="name1">当前查询无结果</view> -->
+          <!-- </view> -->
+          <view class="name1">当前查询无结果</view>
+
+      </view>
+
+
+
+  <view wx:if="{{group.length!==0}}" class='departments'>
+    <block class='department' wx:for="{{group}}" wx:key="orgId">
+      <view class='department' data-gname="{{item.orgName}}" data-gid="{{item.orgId}}" bindtap="refreshMember">
+        <view class='department-inner'>
+          <text class='department-name'>{{item.orgName}}\n</text>
+          <text class='department-mem'>{{item.userNum}}(人)</text>
+        </view>
+      </view> 
+    </block>       
+  </view>
+</view>

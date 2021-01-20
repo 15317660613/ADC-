@@ -1,0 +1,66 @@
+<view class="parent">
+
+<view class="searchbar">
+  <view class='search-view'>
+    <view bindtap='showInput' class='false-search {{showSearch?"hide":""}}' style="color:#666666;line-height:72rpx;">
+      <icon size='32rpx' type='search'/>   
+      搜索
+    </view>
+    <icon size='32rpx' hidden='{{!showSearch}}' type='search' class='search-icon {{showSearch?"":"hide"}}'/>
+    <input focus='{{focused}}' hidden='{{!showSearch}}' bindconfirm='searchMember' class='search {{showSearch?"":"hide"}}' type='text' confirm-type="search" value='{{searchContent}}'></input>
+    <a bindtap='hideInput' class='search-cancel {{showSearch?"":"hide"}}'>取消</a>
+  </view>
+  </view>
+<view class="module-group">
+
+<view wx:for="{{list}}"  
+   wx:key="index" class='item-list-group' bindtap="detailOnClick"  id="{{item.id}}">
+
+   <view  class="top">
+        
+        <image   id="{{item.id}}" catchtap="untop" wx:if="{{item.extInfo1==='1'}}" wx:key="{{item.index}}" class='icon' src='/assects/stack2.png'></image> 
+           
+        <image   id="{{item.id}}" catchtap="top" wx:else wx:key="{{item.index}}" class='icon' src='/assects/stack.png'></image> 
+
+        <text wx:if="{{item.status===0||item.status===-1}}" wx:key="{{item.index}}"  class="state">待完成</text>  
+       <text wx:else wx:key="{{item.index}}"  class="state2">已完成</text>  
+        
+        <text class="title">{{item.title}}</text>
+
+       
+
+        
+        <text class="time">{{item.createTime}}</text>
+       
+        
+        <image   data-index='{{index}}' id="{{item.id}}" data-id="{{item.id}}"catchtap="uncollect" wx:if="{{item.extInfo2==='1'}}" wx:key="{{item.index}}" class='icon' src='/assects/shoucang.png'></image> 
+
+        <image  data-index='{{index}}' index="{{item.index}}" id="{{item.id}}" data-id="{{item.id}}" catchtap="collect" wx:else wx:key="{{item.index}}" class='icon' src='/assects/shoucang2.png'></image> 
+        
+   </view >
+
+
+    <view  class="bottom">  
+        <view class="text-group">  
+        
+        <text class="text">截止时间：{{item.deadTime}}</text>
+        </view>
+
+        <view class="text-group">  
+       
+        <text class="text">接收人：{{item.extInfo}}</text>
+        </view>
+
+        <view class="text-group">  
+      
+        <text class="text2">事项：{{item.detail}}</text>
+        </view>
+   </view >
+  </view>
+
+
+  
+
+</view>
+
+</view>

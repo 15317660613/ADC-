@@ -1,0 +1,79 @@
+<!--pages/mime/mine.wxml-->
+
+
+<view >
+<cover-view class="top">
+
+<cover-image class='image3' src="/assects/bg.png">
+
+</cover-image>
+
+</cover-view>
+
+<view class="bottom">
+<view class="item-group">
+  <view class='item' bindtap="item1OnClick" bindtouchstart="bindtouchstart1" bindtouchend="bindtouchcancel1">
+  <view class="item_bg1"  >
+  <view  class="icon_group" >
+  <image  class='icon' src='/assects/homebg_1.png'>
+
+    </image>
+    </view>
+
+     <view class='icon2_group'>
+          <image  class="icon2" src="/assects/feiji.png"></image>
+        </view>
+</view>
+    <text class="text">行程安排</text>
+  </view>
+
+  <view class='item' bindtap="item2OnClick" bindtouchstart="bindtouchstart2" bindtouchcancel="bindtouchcancel2">
+ <view class="item_bg1"  >
+  <view class="icon_group">
+  <image  class='icon' src='/assects/homebg_1.png'>
+
+    </image>
+    </view>
+     <view class='icon2_group'>
+          <image  class="icon2" src="/assects/zhongdian.png"></image>
+        </view>
+</view>
+    <text class="text">重点工作</text>
+  </view>
+</view>
+</view>
+
+
+<view class="bottom">
+<view class="item-group">
+  <view class='item' bindtap="item3OnClick" indtouchstart="bindtouchstart3" bindtouchcancel="bindtouchcancel3">
+   <view class="item_bg1"  >
+  <view class="icon_group">
+  <image  class='icon' src='/assects/homebg_1.png'>
+
+    </image>
+    </view>
+     <view class='icon2_group'>
+          <image  class="icon2" src="/assects/dangjianxinxi.png"></image>
+        </view>
+</view>
+
+    <text class="text">党委会安排</text>
+  </view>
+
+  <view class='item' bindtap="item4OnClick" indtouchstart="bindtouchstart4" bindtouchcancel="bindtouchcancel4">
+    <view class="item_bg1"  >
+  <view class="icon_group">
+  <image  class='icon' src='/assects/homebg_1.png'>
+
+    </image>
+    </view>
+     <view class='icon2_group'>
+          <image  class="icon2" src="/assects/bangong.png"></image>
+        </view>
+</view>
+    <text class="text">办公会安排</text>
+  </view>
+</view>
+</view>
+</view>

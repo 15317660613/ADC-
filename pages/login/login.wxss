@@ -1,0 +1,49 @@
+/* pages/personInfo/personInfo.wxss */
+.personInfo{
+  margin-top: 100rpx;
+  text-align: center;
+}
+
+.logo{
+  width: 200rpx;
+  margin: 100rpx auto;
+}
+
+.metting-info-btn{
+  margin:100rpx 31rpx 0 31rpx!important;
+  height:73rpx!important;
+  line-height:73rpx!important;
+  font-size: 32rpx!important;
+  letter-spacing: 8px;
+  background-color:#0080FF;
+  color:#fff;
+}
+.metting-info-btn.button-hover{
+  opacity: 0.7;
+}
+.input-group{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  padding: 20rpx 0;
+  font-size: 15px;
+  border-bottom:1rpx solid #DFDFDF;
+}
+.input-group .input-label{
+  margin-right:178rpx;
+  flex:4;
+  letter-spacing: 8rpx;
+}
+.input-group .common-input{
+  width:435rpx;
+  flex:8;
+  font-size: 30rpx;
+  text-align: left;
+  margin-left:30rpx;
+}
+.eye-status{
+  width: 50rpx;
+  margin-left: 20rpx;
+}

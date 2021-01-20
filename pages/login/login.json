@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "绑定账号",
+  "usingComponents": {
+    "i-input": "../../lib/input/index",
+    "i-cell-group": "../../lib/cell-group/index",
+    "i-cell": "../../lib/cell/index",
+    "i-button": "../../lib/button/index",
+    "i-icon" : "../../lib/icon/index"
+  }
+}

@@ -1,0 +1,22 @@
+<!--pages/scienceMonthDetail/scienceMonthDetailEdit.wxml-->
+<!--pages/partycommitteedetail/partycommitteedetail.wxml-->
+<view>
+  <view class="top">
+<view class="title-group">
+<view class="title-group-item">
+<text class="title">{{title}}</text>
+<text class="time">{{createTime}}</text> 
+</view>
+
+</view>
+<text class="border-top"></text>
+  <text class="text-title">{{scheduleMeetEO.createUserName}}:</text>
+  <textarea bindinput="bindEquipment" maxlength="1000" class="text-content" value="{{ scheduleMeetEO.content }}"></textarea>
+  
+</view>
+</view>
+<view >
+    <button class='submit-form' size='80%' style='background-color:#1879E0' bindtap="submit"  form-type='submit'>编辑</button>
+  </view>
+
+

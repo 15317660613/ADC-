@@ -1,0 +1,78 @@
+<!--pages/scienceMonth/scienceMonth.wxml-->
+<view class="swiper-all">
+<view class="parent">
+
+<view class="searchbar" style='margin-top: {{!isLeader?0:"100rpx"}}'>
+  <view class='search-view'>
+  
+    <view bindtap='showInput' class='false-search {{showSearch?"hide":""}}' style="color:#666666;line-height:72rpx;flex:1">
+      <icon size='32rpx' class='search-icon' type='search'/>   
+      <!-- 搜索 -->
+    </view>
+    <picker class='input3' style='flex:8' mode="date" bindchange="bindMultiPickerChange" 
+       placeholder-class="phClass" fields="month"  value="{{currentDate}}" >
+        <view style="text-align:center;line-height:36px">
+          <text wx:if="{{orderData === '月份搜索'}}">{{orderData}}</text>
+         <text class="time timeS" wx:else>{{orderData}}</text>
+        </view>
+      </picker>
+      <a bindtap='hideInput' class='search-cancel {{orderData!="月份搜索"?"":"hide"}}'>取消</a>
+    <!-- <icon size='32rpx' hidden='{{!showSearch}}' type='search' class='search-icon {{showSearch?"":"hide"}}'/>
+    
+    <input focus='{{focused}}' hidden='{{!showSearch}}' bindconfirm='searchMember' class='search {{showSearch?"":"hide"}}' type='text' confirm-type="search" value='{{searchContent}}'></input>
+     -->
+  </view>
+  </view>
+<view class="module-group">
+
+<view wx:for="{{list}}" wx:key="index" class='item-list-group' bindtap="detailOnClick" data-index='{{index}}' id="{{item.id}}">
+
+   <view  class="top">
+        <image id="{{item.id}}" catchtap="untop" wx:if="{{item.top=='1'}}" wx:key="{{item.index}}" class='icon' src='/assects/stack4.png'></image> 
+           
+        <image id="{{item.id}}" catchtap="top" wx:else wx:key="{{item.index}}" class='icon' src='/assects/stack.png'></image> 
+
+        <text wx:if="{{currentTab==0&&item.status==0}}" wx:key="{{item.index}}"  class="state">汇总中</text>  
+        <text wx:elif="{{currentTab==1&&item.status==0}}"  wx:key="{{item.index}}"  class="state">待完成</text> 
+       <text wx:else wx:key="{{item.index}}"  class="state2">已完成</text>  
+        
+        <text class="title" style="width:{{currentTab==0?'485rpx':''}}">{{item.title}}</text>
+
+       
+
+        
+        <text class="time" wx:if="{{currentTab==1&&item.updateTime}}">{{item.updateTime}}</text>
+       <text class="time" wx:elif="{{currentTab==1&&!item.updateTime}}">—— ——</text>
+        
+        <image data-index='{{index}}' value="{{item.index}}" id="{{item.id}}" catchtap="uncollect" wx:if="{{item.collect=='1'}}" wx:key="{{item.index}}" class='icon' src='/assects/shoucang4.png'></image> 
+
+        <image data-index='{{index}}' value="{{item.index}}" id="{{item.id}}" catchtap="collect" wx:else wx:key="{{item.index}}" class='icon' src='/assects/shoucang2.png'></image> 
+        
+   </view >
+
+
+    <view  class="bottom">
+        <text class="text2" wx:if="{{currentTab==1&&!item.content}}">请填写本月工作要点</text>
+        <text class="text2" wx:if="{{currentTab==0&&!item.content}}">无数据</text>   
+        <text class="text2" wx:else >{{item.content}}</text>
+   </view >
+  </view>
+
+
+  
+
+</view>
+
+</view>
+  <!-- </swiper-item>
+  
+</swiper> -->
+
+
+</view>
+<view wx:if="{{isLeader}}" class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">工作要点汇总</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我的工作要点</view>
+  
+</view>
+

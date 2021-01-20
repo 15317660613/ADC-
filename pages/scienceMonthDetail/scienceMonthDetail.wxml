@@ -1,0 +1,42 @@
+<!--pages/partycommitteedetail/partycommitteedetail.wxml-->
+<view>
+  <view class="top">
+<view class="title-group">
+<view class="title-group-item">
+<text class="title">{{title}}</text>
+<text class="time">{{createTime}}</text>
+</view>
+<view>
+ <image bindtap="collect"  wx:if="{{collect==='0'}}"wx:key="{{id}}" class='icon' src='/assects/shoucang2.png'></image>
+
+        <image bindtap="uncollect" wx:else wx:key="{{id}}"  class='icon' src='/assects/shoucang4.png'></image>
+</view>
+</view>
+<text class="border-top"></text>
+  <view wx:for="{{scheduleMeetEO}}" wx:if="{{item.content}}">
+  <text class="text-title">{{item.createUserName}}:</text>
+  <text class="text-content" disabled="true" >{{item.content}}</text>
+  </view>
+</view>
+
+
+    <view class="top">
+ <view class="complete-group">
+<text class="title">完成情况</text>
+<view wx:for="{{scheduleMeetUserEOList}}" class="complete-content">
+<text wx:if="{{item.status===0}}" wx:key="{{item.index}}" class="title3">未完成</text>
+
+<text wx:else wx:key="{{item.index}}" class="title2">已完成</text>
+
+<text class="text-title">{{item.createUserName}}</text>
+
+
+<text class="text-title2" wx:if="{{item.updateTime}}}">{{item.updateTime}}</text>
+</view>
+
+</view>
+
+
+    </view>
+  </view>
+

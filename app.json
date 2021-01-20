@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/mainindex/mainindex",
+    "pages/index/index",
+    "pages/mainindex/scheduleindex",
+    "pages/index/createDaily",
+    "pages/createrequest/createrequest",
+    "pages/supprotdetail/supprotdetail",
+    "pages/office2/office2",
+    "pages/partycommitteedetail/partycommitteedetail",
+    "pages/partycommittee/partycommittee",
+    "pages/partycommittee2/partycommittee2",
+    "pages/others/others",
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/others/othersDaily",
+    "pages/others/otherCalendar",
+    "pages/mineinfo/mineinfo",
+    "pages/password/password",
+    "pages/index/selectCity",
+    "pages/others/otherSecond",
+    "pages/login/login",
+    "pages/office/office",
+    "pages/officedetail/officedetail",
+    "pages/sopport2/sopport2",
+    "pages/scienceMonth/scienceMonth",
+    "pages/scienceMonthDetail/scienceMonthDetail",
+    "pages/scienceMonthDetail/scienceMonthDetailEdit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1879E0",
+    "navigationBarTitleText": "ADC行程",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的日程",
+        "selectedIconPath": "assects/icon-my-blue.png",
+        "iconPath": "assects/icon-my-gray.png"
+      },
+      {
+        "pagePath": "pages/others/others",
+        "text": "查看他人",
+        "selectedIconPath": "assects/icon-others-blue.png",
+        "iconPath": "assects/icon-others-gray.png"
+      }
+    ],
+    "color": "#999",
+    "selectedColor": "#1879E0",
+    "backgroundColor": "#fff",
+    "borderStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置将用于定位当前城市"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

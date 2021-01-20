@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component_home": "/pages/component/home/home",
+    "component_mine": "/pages/component/mine/mine",
+    "i-modal": "/lib/modal/index2"
+  }
+}

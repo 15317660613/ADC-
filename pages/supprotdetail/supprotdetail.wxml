@@ -1,0 +1,54 @@
+<!--pages/partycommitteedetail/partycommitteedetail.wxml-->
+<view>
+  <view class="top">
+<view class="title-group">
+<view class="title-group-item">
+<text class="title">{{scheduleMeetEO.title}}</text>
+<text class="time">{{scheduleMeetEO.createTime}}</text>
+</view>
+<view>
+ <image bindtap="uncollect"  wx:if="{{scheduleMeetEO.collected===1}}"wx:key="{{scheduleMeetEO.id}}" class='icon' src='/assects/shoucang4.png'></image>
+
+        <image bindtap="collect" wx:else wx:key="{{scheduleMeetEO.id}}"  class='icon' src='/assects/shoucang2.png'></image>
+</view>
+</view>
+  <text class="text-title">请求人:</text>
+
+  <view class="text-content">{{scheduleMeetEO.createUserName}}</view>
+
+  <text class="text-title">参加时间:</text>
+
+  <view class="text-content">{{scheduleMeetEO.dateSection}}</view>
+
+  <text class="text-title">参加地点:</text>
+
+  <view class="text-content">{{scheduleMeetEO.address}}</view>
+
+  <text class="text-title">事项:</text>
+
+  <textarea class="text-content" disabled="true" value="{{scheduleMeetEO.detail}}"></textarea>
+<text wx:if="{{tag!=1}}" class="text-title">处理意见:</text>
+<radio-group wx:if="{{tag!=1}}"  bindchange="listenerRadioGroup" class='checkbox'>
+ <label class="radio" >
+  <radio   disabled="{{status==2||status==1}}" checked="{{chooseContent==1}}" class="checkbox" value='已完成'>已完成</radio >
+  </label>
+   <label class="radio" >
+  <radio    disabled="{{status==2||status==1}}" checked="{{chooseContent==2}}" class="checkbox" value='不同意，驳回'>不同意，驳回</radio >
+  </label>
+  <label class="radio" >
+  <radio   disabled="{{status==2||status==1}}" checked="{{chooseContent==3}}"  class="checkbox" value='暂不处理'>暂不处理</radio >
+   </label>
+</radio-group >
+
+</view>
+
+
+   <!-- <view  class="button-group" wx:if="{{scheduleMeetEO.status===0}}"> -->
+   <view  class="button-group" wx:if="{{tag==2&&status!=2&&status!=1}}">
+    <button   class='submit-form' size='80%' form-type='submit' bindtap="submit" style='background-color:#1879E0'>确定</button>
+  </view>
+
+
+
+
+  </view>

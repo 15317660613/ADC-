@@ -1,0 +1,82 @@
+<!--pages/mineinfo/mineinfo.wxml-->
+<view >
+<view class="top">
+
+<view class="item1">
+<text class="key1">基本信息</text>
+</view>
+<view class="item">
+<text class="key">登录账号</text>
+<text class="value">{{account}}</text>
+</view>
+<view class="item">
+<text class="key">用户姓名</text>
+<text class="value">{{usname}}</text>
+</view>
+<view class="item">
+<text class="key">用户工号</text>
+<text class="value">{{userCode}}</text>
+</view>
+<view class="item">
+<text class="key">职位名称</text>
+<text class="value">{{contactAddress}}</text>
+</view>
+</view>
+
+<view class="bottom">
+
+<view class="item1">
+<text class="key1">详细信息</text>
+</view>
+<view class="item">
+<text class="key">办公电话</text>
+ <view   wx:if="{{tel_focus}}"class="input-group">
+    <input class='input'   id="value" focus="{{tel_focus}}" 
+     value="{{officePhone}}"
+     bindtap="tellistenerPhoneInput" 
+     placeholder='请输入...' bindinput='telonInputEvent'></input>
+  </view>
+
+  <view   wx:else class="input-group1">
+    <input class='input' id="value" focus="{{tel_focus}}" 
+    bindtap="tellistenerPhoneInput"   value="{{officePhone}}"
+    placeholder='请输入...' bindinput='telonInputEvent'></input>
+  </view>
+</view>
+<view class="item">
+<text class="key">手机号码</text>
+<view   wx:if="{{mobile_focus}}"class="input-group">
+    <input class='input' id="value" focus="{{mobile_focus}}" 
+     bindtap="mobilelistenerPhoneInput"  value="{{cellPhoneNumber}}"
+    placeholder='请输入...' bindinput='mobileonInputEvent'></input>
+  </view>
+
+  <view   wx:else class="input-group1">
+    <input class='input'  id="value" focus="{{mobile_focus}}" 
+      bindtap="mobilelistenerPhoneInput"   value="{{cellPhoneNumber}}"
+    placeholder='请输入...' bindinput='mobileonInputEvent'></input>
+  </view>
+</view>
+<view class="item">
+<text class="key">电子邮箱</text>
+<view   wx:if="{{elec_focus}}"class="input-group">
+    <input class='input' id="value" focus="{{elec_focus}}" 
+      bindtap="eleclistenerPhoneInput"    value="{{email}}"
+    placeholder='请输入...' bindinput='eleconInputEvent'></input>
+  </view>
+
+  <view   wx:else class="input-group1">
+    <input class='input' id="value" focus="{{elec_focus}}" 
+     bindtap="eleclistenerPhoneInput"  value="{{email}}"
+    placeholder='请输入...' bindinput='eleconInputEvent'></input>
+  </view>
+</view>
+
+</view>
+<view >
+    <button class='submit-form' size='100%' form-type='submit' bindtap="submit" style='background-color:#1879E0'>完成</button>
+  </view>
+  
+  
+</view>
+

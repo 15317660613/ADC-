@@ -1,0 +1,264 @@
+/* pages/mineinfo/mineinfo.wxss */
+page{
+   background: #e4e4e4;
+
+}
+.top{
+box-sizing: border-box;
+background-color: #fff;
+padding: 20rpx;
+border-radius: 8px;
+margin: 15rpx;
+}
+.bottom{
+  box-sizing: border-box;
+background-color: #fff;
+ padding: 20rpx;
+border-radius: 8px;
+margin: 15rpx;
+}
+
+.key{
+  font-size: 28rpx;
+  color: #000;
+  width: 150rpx;
+  text-align: left;
+}
+
+.key2{
+  font-size: 28rpx;
+  color: #000;
+  width: 150rpx;
+  text-align: left ;
+  
+ 
+}
+.value{
+ font-size: 26rpx;
+  color: #999;
+}
+
+.item{
+  display: flex;
+   justify-content: space-between;
+  height: 70rpx;
+
+  padding: 10rpx;
+
+  align-items: center;
+  text-align: center;
+}
+
+
+.item2{
+  display: flex;
+   justify-content: space-between;
+  height: 270rpx;
+
+  padding: 10rpx;
+
+  align-items: center;
+  text-align: center;
+}
+.input-group{
+ flex: 1;
+  height: 60rpx;
+   border-style: solid;  
+  border-radius: 5rpx;
+  border-color:#1879E0;
+  border-width:1rpx;
+  
+}
+
+.input-group1{
+ flex: 1;
+  height: 60rpx;
+   border-style: solid;  
+  border-radius: 5rpx;
+  border-color:#e4e4e4;
+  border-width:1rpx;
+  
+}
+
+.input-group2{
+ flex: 1;
+  height: 270rpx;
+   border-style: solid;  
+  border-radius: 5rpx;
+  border-color:#e4e4e4;
+  border-width:1rpx;
+     font-size: 25rpx;
+     text-align: left;
+     padding-left: 30rpx;
+     padding-right: 30rpx;
+     padding-top: 15rpx;
+}
+
+
+.input{
+  flex: 1;
+  min-height: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+  padding-left: 30rpx;
+  padding-right: 50rpx;
+  color: #333;
+}
+
+.time{
+color:#333;
+font-size:30rpx;
+}
+
+.phClass{
+  color: #999999;
+  /* font-size:28rpx; */
+}
+
+
+
+.input3{
+  display: flex;
+ flex: 1;
+  min-height: 60rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  align-items: center;
+  padding-left: 30rpx;
+  font-family:PingFang SC;
+  position: relative;
+}
+
+.input4{
+  display: flex;
+ flex: 1;
+  min-height: 60rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  align-items: center;
+  padding-left: 30rpx;
+  
+}
+
+.input2{
+  min-height: 270rpx;
+  height: 270rpx;
+  font-size: 28rpx;
+  text-align: left;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  padding-right: 50rpx;
+  color: #333;
+  
+}
+
+.submit-form {
+  width: 96%;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-top: 80rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: #adadad;
+}
+.clear-float{
+  clear: both;
+}
+.title-left{
+
+ float : left;
+  margin-left: 15rpx;
+  color: #333;
+  font-size: 32rpx;
+  width: 20rpx；
+  
+}
+.modal-close{
+  float : right;
+  margin-right: 15rpx;
+}
+
+.checkbox {
+  margin-top: 20rpx;
+ 
+}
+
+.checkbox {
+
+  font-size: 28rpx;
+  text-align: center;
+  align-items: center;
+   justify-content: space-evenly;
+}
+
+.button-group {
+  margin-bottom: 20rpx;
+}
+
+.checkbox-group{
+ display: flex;
+
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+   justify-content: space-evenly;
+  margin-bottom: 20rpx;
+}
+
+radio .wx-radio-input {
+  border-radius: 50%;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 44rpx;
+  height: 44rpx;
+ 
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 26rpx; /* 对勾大小 26rpx */
+  color: #fff; /* 对勾颜色 */
+  background: #1879E0;
+  border-color: #1879E0;
+}
+.image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.check_persons{
+   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  height: 800rpx;
+}
+
+.people-title{
+width: 100%;
+ border-bottom: 1rpx #e4e4e4;
+
+}
+.image-jiaren{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+right: 15rpx;
+}
+.image-shijian{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 15rpx;
+  top: 10rpx;
+}

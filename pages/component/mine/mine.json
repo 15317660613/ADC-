@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+  "i-modal": "../../../lib/modal/index2"
+  }
+}

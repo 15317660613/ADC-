@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "行程安排",
+  "usingComponents": {
+    "component_index": "/pages/component/index/index",
+    "component_calendar": "/pages/component/calendar/calendar",
+    "component_calendar": "/pages/component/calendar/calendar",
+    "component_others": "/pages/component/others/others"
+  }
+}

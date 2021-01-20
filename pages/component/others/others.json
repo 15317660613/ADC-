@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "disableScroll":true,
+  "navigationBarTitleText": "查看他人",
+  "usingComponents": {}
+}

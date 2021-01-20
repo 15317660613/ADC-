@@ -1,0 +1,122 @@
+/* pages/partycommitteedetail/partycommitteedetail.wxss */
+
+
+.submit-form {
+  width: 97%;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-top: 40rpx;
+ 
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+
+  background-color: #adadad;
+}
+page{
+   background: #e4e4e4;
+
+}
+.top{
+   background: #fff;
+   margin: 15rpx;
+   border-radius: 8px;
+   display: flex;
+   padding-bottom: 40rpx;
+   flex-direction: column;
+}
+.text-title{
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.text-title2{
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  flex: 1;
+  text-align: right;
+}
+.text-content{
+  font-size: 28rpx;
+  color: #333;
+     margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+   width: 90%;
+   padding: 15rpx;
+    border-radius: 3rpx;
+   background-color: #f7f7f7;
+   word-break: break-all;
+}
+.image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.title-group{
+  display: flex;
+   margin: 20rpx;
+   padding-top: 30rpx;
+   align-items: center;
+
+}
+
+.title-group-item{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.complete-group{
+  display: flex;
+   margin: 20rpx;
+  
+   flex-direction: column;
+   padding-top: 30rpx;
+}
+.complete-content{
+  display: flex;
+  margin-top: 30rpx;
+}
+.title{
+   font-size: 35rpx;
+   text-align: left;
+  color: #000;
+}
+.title2{
+   font-size: 24rpx;
+  color: #fff;
+   border-radius: 90rpx;
+   padding-left: 10rpx;
+   padding-right: 10rpx;
+  background-color: #BFBFBF;
+  padding:2rpx 10rpx;
+}
+
+.title3{
+   font-size: 24rpx;
+  color: #fff;
+   border-radius: 90rpx;
+   padding-left: 10rpx;
+   padding-right: 10rpx;
+  background-color: #E65964;
+  vertical-align: middle;
+  padding:2rpx 10rpx;
+}
+.time{
+   font-size: 20rpx;
+  color: #666;
+  flex: 1;
+ text-align: center;
+ margin-right: 20rpx;
+}
+.icon{
+  height: 35rpx;
+  width: 35rpx;
+  margin: 15rpx;
+ 
+}

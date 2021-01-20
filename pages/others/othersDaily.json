@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "查看日程",
+  "usingComponents": {
+    "i-modal": "../../lib/modal/index"
+  }
+}

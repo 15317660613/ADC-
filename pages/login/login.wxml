@@ -1,0 +1,16 @@
+<!--pages/personInfo/personInfo.wxml-->
+<form bindsubmit="submitForm" report-submit>
+  <view class="personInfo">
+    <image src='../../assects/login-logo-new.jpg' mode='widthFix' class='logo'/>
+    <view class="input-group">
+      <i-icon type="mine" size="22"/>
+      <input name="username" class="common-input" placeholder-style="font-size:15px" style='margin-right:70rpx' placeholder="请输入用户名" />
+    </view>
+    <view class="input-group">
+      <i-icon size='22' type="lock"/>
+      <input password='{{showStatus}}' name="password" class="common-input" placeholder-style="font-size:15px" placeholder="请输入密码" />
+      <image bindtap='changeStatus' src='{{eyeStatus}}' mode='widthFix' class='eye-status'/>
+    </view>
+    <button class="metting-info-btn" form-type="submit">绑定</button>
+  </view>
+</form>

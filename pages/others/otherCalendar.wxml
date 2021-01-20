@@ -1,0 +1,231 @@
+  <view class="cld-days">
+    <view class="cld-day-item">一</view>
+    <view class="cld-day-item">二</view>
+    <view class="cld-day-item">三</view>
+    <view class="cld-day-item">四</view>
+    <view class="cld-day-item">五</view>
+    <view class="cld-day-item">六</view>
+    <view class="cld-day-item">日</view>
+  </view>
+<view class="calendar calendar-active}}">
+  <!--  -->
+
+  <!--  -->
+
+    <view class="cld-title">
+    <image 
+      class="cld-arrow click-larger" src="/assects/prev.png" 
+      catchtap='monthSwiper' data-flag="0"
+    >
+    </image>
+
+    {{ dateTip }}
+
+    <image 
+      class="cld-arrow click-larger" src="/assects/next.png" 
+      catchtap='monthSwiper'
+    >
+    </image>
+  </view>
+  <!--  -->
+  <view class="cld-days1" >
+    <swiper
+      current="{{ currMonthIndex }}"
+      circular="true"
+      bindchange="calendarSwiper"
+      duration="400"
+      style="height: {{ calendarHeight }}rpx;"
+    >
+     <block>
+      <!--  -->
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[0].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[0].year+'-'+dayList[0].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[0].year+'-'+dayList[0].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[1].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[1].year+'-'+dayList[1].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[1].year+'-'+dayList[1].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[2].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[2].year+'-'+dayList[2].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[2].year+'-'+dayList[2].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[3].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[3].year+'-'+dayList[3].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[3].year+'-'+dayList[3].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[4].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[4].year+'-'+dayList[4].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[4].year+'-'+dayList[4].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[5].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[5].year+'-'+dayList[5].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[5].year+'-'+dayList[5].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[6].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[6].year+'-'+dayList[6].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[6].year+'-'+dayList[6].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[7].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[7].year+'-'+dayList[7].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[7].year+'-'+dayList[7].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[8].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[8].year+'-'+dayList[8].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[8].year+'-'+dayList[8].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[9].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[9].year+'-'+dayList[9].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[9].year+'-'+dayList[9].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[10].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[10].year+'-'+dayList[10].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[10].year+'-'+dayList[10].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-container">
+            <block wx:for="{{ dayList[11].days }}" wx:key="index" wx:for-item="item1">
+            
+              <view class="cld-day-item1 " bindtap="dianji" data-day="{{item1.day}}">
+              <view class="{{today === dayList[11].year+'-'+dayList[11].month+'-'+item1.day?'currentStyle':''}} {{select === dayList[11].year+'-'+dayList[11].month+'-'+item1.day? 'selected':''}} ">{{ item1.day }}</view> 
+              <view class="dots-container" wx:if="item1.scheduleDetailEOList"><block wx:for="{{item1.scheduleDetailEOList}}" wx:for-item="i" data-index="{{index}}" wx:key='un'><view class="{{select === year+'-'+month+'-'+item1.day?'dotswhite':'dots'}}" wx:if="{{index<3?true:false}}"></view></block>
+              </view>
+              </view>
+            </block>
+          </view>
+          <text class="monthbg">{{month}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+ <view class="journey-container"  style="height: {{ journeyHeight }}rpx !important;">
+  <swiper  current="{{ currentPage }}"  circular="true" style="height:100%;" bindchange="dataSwiper"  duration="400">
+  <block wx:for='{{dataList}}'>
+   <swiper-item>   
+      <view class="journey-title" >
+           	<image class="today-icon" src="/assects/today.png" bindtap="toDate"></image>
+            <view class="today-text">{{month}}月{{day}}日   {{week}}</view>
+             <!-- <view class="today-text" wx:if="{{flag}}">{{dataList[0].month}}月{{dataList[0].day}}日   周{{dataList[0].week}}</view> -->
+            <view wx:if="{isInit}}"><text class="today-journey" wx:if="{{item.scheduleContent!==null}}">{{item.scheduleContent}}</text></view>
+        </view>
+         <!-- <block wx:for="{{ dataList[0].scheduleDetailEOList }}" wx:key="index" > -->
+         <view class="journey-content-none" wx:if="{{item.id===null}}">
+          <!-- <image class="add-icon" src="/assects/add_journey.png" data-id="{{item.id}}" bindtap="addJourney" data-date="{{item.scheduleDate}}"></image> -->
+          <text>暂无行程</text>
+         </view> 
+       
+         <view  class="journey-content-block" data-id="{{item.id}}" style="min-height:600rpx" data-date="{{item.scheduleDate}}">
+          <view wx:for="{{item.scheduleDetailEOList}}" class="item-style"  wx:for-item="i" wx:key="id" >
+            <view class="journey-title-item"><text>{{i.scheduleDetail ===null?'未填写详情':i.scheduleDetail}}</text></view>
+            <view class="journey-time"><image class="icon" src="/assects/time.png"></image><text class="text-content">{{i.timeLimit===null?'未选择时间':i.timeLimit}}</text></view>
+            <view class="journey-location"><image class="icon" src="/assects/location.png"></image><text class="text-content">{{i.extInfo1===null?'未填写地点':i.extInfo1}}</text></view>
+           </view>
+         </view>
+          <!-- </block> -->
+          </swiper-item>
+
+</block>
+   
+          </swiper>
+    </view>
+<!-- <view class="backShadow" wx:if="{{ showCalender }}" catchtap='hideCalenderEv'></view> -->

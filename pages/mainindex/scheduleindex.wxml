@@ -1,0 +1,21 @@
+<view class="{{currentTab == 0? 'mar80': 'mar100'}}" >
+<!-- 组件显示，根据自己需求添加 -->
+<view hidden="{{currentTab == 0? false: true}}">
+  <component_calendar  id="test"/>
+</view>
+<view hidden="{{currentTab == 1? false: true}}">
+  <component_others/>
+</view>
+
+</view>
+<view  style="height: 0.1rpx;color:#fff;background:#fff">1</view>
+<!-- <view style="height:1px;wdith:100%">
+</view> -->
+<!-- 自定义 tabbar -->
+<view class="nav-tabs" >
+  <view class="tab-list {{currentTab == idx ? 'active' : 'default' }}" wx:for="{{items}}" wx:key="prototype" wx:for-index="idx" wx:for-item="item" data-current="{{idx}}" bindtap="swichNav">
+    <text class="tab-text" wx:for-index="idx" data-current="{{idx}}" src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}">{{item.text}}</text>
+    <image class="iconPath" wx:for-index="idx" data-current="{{idx}}" src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
+  </view>
+</view>
+

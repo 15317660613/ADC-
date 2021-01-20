@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "月度工作要点",
+  "navigationBarBackgroundColor": "#1879E0",
+  "navigationBarTextStyle": "white"
+}

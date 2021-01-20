@@ -1,0 +1,166 @@
+/* pages/mime/mine.wxss */
+
+.touxiangitem{
+  display: flex;
+   flex: 1;
+   height: 400rpx;
+  flex-direction: column;
+
+ align-items: center;
+
+
+}
+.text{
+  font-size: 30rpx;
+  color: #fff;
+}
+.image{
+ 
+  width: 30rpx;
+  height: 30rpx;
+}
+.image3{
+  width: 100%;
+  height: 400rpx;
+
+}
+.image4{
+  width: 150rpx;
+  height: 150rpx;
+ margin-top: 100rpx;
+  text-align: center;
+  margin-bottom: 15rpx;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.image2{
+  width: 45rpx;
+  height: 45rpx;
+}
+.key{
+  flex: 1;
+    font-size: 30rpx;
+  color: #000;
+  margin-left: 15rpx;
+  text-align: left;
+}
+.item{
+  display: flex;
+   justify-content: space-between;
+  height: 70rpx;
+border-bottom: 1rpx solid #e5e5e5;
+  padding: 15rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  
+  align-items: center;
+  text-align: center;
+}
+/* 头部 */
+.header-container {
+  display: flex;
+  flex-direction: row;
+  height: 400rpx;
+  background-color: #fff;
+  align-items: center;
+  position: relative;
+ 
+}
+
+.header-bg{
+  width: 100%;
+  height: 100%;
+    z-index: 1;
+     position: relative;
+}
+.touxinag{
+  width: 170rpx;
+  height: 170rpx;
+}
+
+/* 名称和头像 */
+.userContent{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+ 
+}
+
+
+.header-nickname {
+  color: #fff;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+/* 帐号管理和信息 */
+.header-userInfo{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 120rpx;
+ align-items: center;
+}
+
+
+.jiebnag{
+  background: white;
+  width: 100%;
+ 
+  display: flex;
+  
+  border-radius:10rpx;
+  flex-direction: column
+}
+
+.weixin_group{
+width: 100%;
+text-align: center;
+   align-items: center;
+  
+   padding-top: 30rpx;
+   padding-bottom: 30rpx;
+}
+.weixin{
+  width: 186rpx;
+  height: 186rpx;
+  text-align: center;
+   align-items: center;
+}
+.jiebang_text{
+  color: #000;
+  font-size: 30rpx;
+padding-bottom: 60rpx;
+  padding-left: 86rpx;
+  padding-right: 86rpx;
+    text-align: center;
+     align-items: center;
+}
+.buttons{
+  display: flex;
+  height: 80rpx;
+  padding-bottom: 20rpx;
+}
+.cancle{
+  height:60rpx;
+  width: 214rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+  background-color: #fff
+  
+}
+.confirm{
+  height: 60rpx;
+  width: 214rpx;
+    text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #4594F2
+}

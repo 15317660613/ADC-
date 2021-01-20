@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+     },
+  
+  "enablePullDownRefresh": true, 
+  "backgroundTextStyle": "dark", 
+  "onReachBottomDistance": 50 ,
+"navigationBarTitleText": "党委会安排",
+    "navigationBarBackgroundColor": "#E60012",
+    "navigationBarTextStyle": "white"
+  
+}

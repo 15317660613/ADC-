@@ -1,0 +1,159 @@
+<!--pages/partycommittee/partcommittee2.wxml-->
+<!--index.wxml-->
+
+<view class="swiper-all">
+
+
+
+<!-- <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange"> -->
+  <!-- 我是全部安排
+  <swiper-item>
+   
+<view class="searchbar">
+  <view  class="search-input-group">
+    <input class='search-input' placeholder='关键字搜索' bindinput='onInputEvent'></input>
+  </view>
+</view>
+<view class="module-group">
+
+<view wx:for="{{list}}" wx:key="index" class='item-list-group' bindtap="detailOnClick">
+
+   <view  class="top">
+        
+        <image wx:if="{{item.detailType===0}}" wx:key="{{item.index}}" class='icon' src='/assects/stack2.png'></image> 
+           
+        <image wx:else wx:key="{{item.index}}" class='icon' src='/assects/stack2.png'></image> 
+
+        <text wx:if="{{item.status===0}}" wx:key="{{item.index}}"  class="state">待完成</text>  
+       <text wx:else wx:key="{{item.index}}"  class="state2">已完成</text>  
+        
+        <text class="title">{{item.title}}</text>
+
+       
+
+        
+        <text class="time">{{item.createTime}}</text>
+       
+        
+        <image class='icon' src='/assects/shoucang.png'></image> 
+        
+   </view >
+
+
+    <view  class="bottom">  
+        <view class="text-group">  
+        
+        <text class="text">截止时间：{{item.deadTime}}</text>
+        </view>
+
+        <view class="text-group">  
+       
+        <text class="text">接收人：{{item.extInfo}}</text>
+        </view>
+
+        <view class="text-group">  
+      
+        <text class="text2">事项：{{item.detail}}</text>
+        </view>
+   </view >
+  </view>
+
+
+  
+
+</view>
+  </swiper-item>
+  <!-- 我是我的安排 -->
+  <!-- <swiper-item> --> 
+   
+
+
+<view wx:if="{{currentTab!=2}}" class="searchbar">
+  <view class='search-view'>
+    <view bindtap='showInput' class='false-search {{showSearch?"hide":""}}' style="color:#666666;line-height:72rpx;">
+      <icon size='32rpx' type='search'/>   
+      搜索
+    </view>
+    <icon size='32rpx' hidden='{{!showSearch}}' type='search' class='search-icon {{showSearch?"":"hide"}}'/>
+    <input focus='{{focused}}' hidden='{{!showSearch}}' bindconfirm='searchMember' class='search {{showSearch?"":"hide"}}' type='text' confirm-type="search" value='{{searchContent}}'></input>
+    <a bindtap='hideInput' class='search-cancel {{showSearch?"":"hide"}}'>取消</a>
+  </view>
+  </view>
+<view wx:if="{{currentTab!=2}}" class="module-group">
+
+<view wx:for="{{list}}" wx:key="index" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd" bindlongtap="isDelClick"  class='item-list-group' bindtap="detailOnClick" data-status="{{item.status}}" id="{{item.id}}">
+
+   <view  class="top">
+        
+        <image data-extInfo3="{{item.extInfo3}}" id="{{item.id}}" catchtap="untop" wx:if="{{item.top===1}}" wx:key="{{item.index}}" class='icon' src='/assects/stack4.png'></image> 
+           
+        <image data-extInfo3="{{item.extInfo3}}" id="{{item.id}}" catchtap="top" wx:else wx:key="{{item.index}}" class='icon' src='/assects/stack.png'></image> 
+
+        <text wx:if="{{item.status===2}}" wx:key="{{item.index}}"  class="state3">已驳回</text>  
+         <text wx:elif="{{item.status===1}}" wx:key="{{item.index}}"  class="state2">已完成</text>  
+       <text wx:else wx:key="{{item.index}}"  class="state">{{itme.extInfo3}}待完成</text>  
+        
+        <text class="title">{{item.title}}</text>
+
+       
+
+        
+        <text class="time">{{item.createTime}}</text>
+       
+        
+        <image data-extInfo3="{{item.extInfo3}}" data-index='{{index}}' id="{{item.id}}" catchtap="uncollect" wx:if="{{item.collected===1}}" wx:key="{{item.index}}" class='icon' src='/assects/shoucang4.png'></image> 
+
+        <image data-extInfo3="{{item.extInfo3}}" data-index='{{index}}' id="{{item.id}}" catchtap="collect" wx:else wx:key="{{item.index}}" class='icon' src='/assects/shoucang2.png'></image> 
+        
+   </view >
+
+
+    <view  class="bottom">  
+        <view class="text-group">  
+        
+        <text class="text">时间：{{item.dateSection}}</text>
+        </view>
+
+        <view class="text-group">  
+       
+        <text class="text">接收人：{{item.receiveUserName}}</text>
+        </view>
+
+        <view class="text-group">  
+      
+        <text class="text2">事项：{{item.detail}}</text>
+        </view>
+   </view >
+  </view>
+
+
+  
+
+
+
+</view>
+<view class="add-wrap"  wx:if="{{ visible && currentTab!=2}}" visible="{{ visible && currentTab!=2}}" hover-class="plus-hover" >
+  <image bindtap="create" src="/assects/add.png"></image>
+</view>
+
+  <!-- </swiper-item>
+  
+</swiper> -->
+<view class="importMain"  wx:if="{{currentTab==2}}">
+<view wx:for="{{importList}}" data-fileType="{{item.extInfo1}}" bindtap="openFile" data-fileId="{{item.fileId}}" wx:key="index" class="import-group">
+  <view class="text-group">
+      <text class="text">{{item.name}}</text>
+      <text class="text text-infoTime">{{item.infoTime}}</text>
+  </view>
+  <view class="text-group">
+  <text class="text-time">发布时间：{{item.createTime}}</text>
+  </view>
+</view>
+</view>
+<view class="swiper-tab">
+<view wx:if="{{isImport}}" class="swiper-tab-list {{isImport?'swiper-tab-list33':''}} {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">部门重点工作</view>
+  <view wx:if="{{isSupport}}" class="swiper-tab-list {{isImport?'swiper-tab-list33':''}} {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">请求我的支持</view>
+  <view class="swiper-tab-list {{isImport?'swiper-tab-list33':''}} {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我请求的支持</view>
+  
+</view>
+</view>

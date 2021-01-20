@@ -1,0 +1,132 @@
+<!--pages/mime/mine.wxml-->
+
+<view>
+	<cover-view class="top">
+
+		<cover-image class='image3' src="/assects/bg.png">
+
+		</cover-image>
+
+	</cover-view>
+
+	<view class="bottom">
+		<view class="item-group">
+			<view class='item' wx:if="{{isNormal||isScienceLeadedr}}" bindtap="item1OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/feiji.png"></image>
+					</view>
+				</view>
+				<text class="text">行程安排</text>
+			</view>
+
+			<view class='item' wx:if="{{isNormal||isScienceLeadedr}}" bindtap="item2OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/zhongdian.png"></image>
+					</view>
+				</view>
+				<text class="text">重点工作</text>
+			</view>
+			<view class='item' wx:if="{{isScienceLeadedr}}" bindtap="item3OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/dangjianxinxi.png"></image>
+					</view>
+				</view>
+
+				<text class="text">党委会安排</text>
+			</view>
+			<view class='item' wx:if="{{isScienceMember}}" bindtap="item5OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/yuedurenwu.png"></image>
+					</view>
+				</view>
+
+				<text class="text">科委会月度要点</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="bottom">
+		<view class="item-group">
+			<view class='item' wx:if="{{isNormal}}" bindtap="item3OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/dangjianxinxi.png"></image>
+					</view>
+				</view>
+
+				<text class="text">党委会安排</text>
+			</view>
+
+			<view class='item' wx:if="{{isNormal||isScienceLeadedr}}" bindtap="item4OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/bangong.png"></image>
+					</view>
+				</view>
+				<text class="text">办公会安排</text>
+			</view>
+			<view class='item' wx:if="{{isScienceLeadedr}}" bindtap="item5OnClick">
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/yuedurenwu.png"></image>
+					</view>
+				</view>
+
+				<text class="text">科委会月度要点</text>
+			</view>
+			<view wx:if="{{isScienceLeadedr}}" class='item' >
+				<view class="item_bg1">
+					<view class="icon_group">
+						<image class='icon' src='/assects/homebg_1.png'>
+
+						</image>
+					</view>
+					<view class='icon2_group'>
+						<image class="icon2" src="/assects/gengduo.png"></image>
+					</view>
+				</view>
+				<text class="text"  style="color:#999999">敬请期待</text>
+			</view>
+		</view>
+	</view>
+</view>

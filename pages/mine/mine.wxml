@@ -1,0 +1,49 @@
+<!--pages/mime/mine.wxml-->
+
+<view >
+<view class="header-container">
+      <image class='header-bg' src = '/assects/minebg.png'></image>
+      <view class='userContent'>
+       
+        
+        <view class='header-userInfo'>
+          <image  class="touxinag" src="/assects/touxiang.png"></image>
+        </view>
+        <text class="header-nickname">{{name}}</text>
+      </view>
+</view>
+
+<view class="bottom">
+
+<view class="item" bindtap="onWodeClick">
+<image class='image2' src="/assects/wode.png"></image>
+<text class="key">我的信息</text>
+<image class='image' src="/assects/hou.png"></image>
+</view>
+<view class="item"  bindtap="onMimaClick">
+<image class='image2' src="/assects/mima.png"></image>
+<text class="key">修改密码</text>
+<image class='image' src="/assects/hou.png"></image>
+</view>
+<view class="item"  bindtap="onWeixinClick">
+<image class='image2' src="/assects/weixin.png"></image>
+<text class="key">解除绑定</text>
+<image class='image' src="/assects/hou.png"></image>
+</view>
+</view>
+</view>
+
+<i-modal wx:if="{{ visible }}" visible="{{ visible }}"
+  show-ok="{{false}}" show-cancel="{{false}}">
+    <view class="jiebnag">
+    <view class="weixin_group"> 
+    <image class="weixin" src="/assects/jiebangweixin.png"></image>
+    </view>
+    <text class='jiebang_text'>您确定要解除本程序与您微信的绑定吗？</text>
+     <view class="buttons"> 
+     <button class="cancle" bindtap="cancle">取消</button>
+      <button class="confirm" bindtap="confirm">确定</button>
+     </view>
+    </view>
+   
+</i-modal>

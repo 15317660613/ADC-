@@ -1,0 +1,107 @@
+<!--pages/mineinfo/mineinfo.wxml-->
+<view >
+
+<view class="bottom">
+<view class="item">
+<text class="key">主题</text>
+ <view   wx:if="{{old_focus}}"class="input-group">
+    <input class='input' maxlength='20'  id="value" focus="{{old_focus}}"
+     placeholder-class="phClass"
+    bindtap="oldlistenerPhoneInput" value="{{old_focus_value}}"
+     placeholder='请输入主题' bindinput='oldonInputEvent'></input>
+  </view>
+
+  <view   wx:else class="input-group1">
+    <input class='input' maxlength='20' id="value" focus="{{old_focus}}"
+     placeholder-class="phClass"
+    bindtap="oldlistenerPhoneInput" value="{{old_focus_value}}"
+    placeholder='请输入主题' bindinput='oldonInputEvent'></input>
+  </view>
+</view>
+<view class="item">
+<text class="key">参加时间</text>
+  <view   class="input-group1" style="position:relative">
+     <picker class='input3' mode="multiSelector" bindchange="bindMultiPickerChange" 
+       placeholder-class="phClass" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view style="width: 482rpx;text-align:left;">
+          <text wx:if="{{orderData === '点击选择参加时间'}}">{{orderData}}</text>
+         <text class="time" wx:else>{{orderData}}</text>
+        </view>
+      </picker>
+       <image  class='image-shijian' wx:if="{{orderData === '点击选择参加时间'}}" src='/assects/shijian.png'></image >
+  </view>
+</view>
+<view class="item">
+<text class="key">活动地点</text>
+<view   wx:if="{{confirm_focus}}"class="input-group">
+    <input class='input' id="value" focus="{{confirm_focus}}" 
+      placeholder-class="phClass"
+    bindtap="confirmlistenerPhoneInput" maxlength='20' value="{{confirm_focus_value}}"
+    placeholder='请输入活动地点' bindinput='confirmonInputEvent'></input>
+  </view>
+
+  <view   wx:else class="input-group1">
+    <input class='input' id="value" focus="{{confirm_focus}}" 
+      placeholder-class="phClass"
+    bindtap="confirmlistenerPhoneInput" maxlength='20' value="{{confirm_focus_value}}"
+    placeholder='请输入活动地点' bindinput='confirmonInputEvent'></input>
+  </view>
+</view>
+
+
+<view class="item">
+<text class="key">接收人</text>
+  <view   class="input-group1">
+    <view wx:if="{{name==='点击添加接收人'}}" class='input3'    placeholder-class="phClass" bindtap='addPerson'>{{name}} <image  class='image-jiaren' src='/assects/jiaren.png'></image ></view>
+      <view  wx:else class='input4' placeholder-class="phClass" bindtap='addPerson'>{{name}}</view>
+  </view>
+</view>
+
+<view class="item2">
+<text class="key2">事项</text>
+  <!-- <view   class="input-group2"> -->
+    
+    <textarea  wx:if="{{ !visible }}"class='input-group2'   placeholder-class="phClass"  bindinput="bindEquipment" placeholder='输入具体事项，字数控制在80字以内...' data-tag="scheduleDetail" value="{{detail}}"  maxlength='80' data-index="{{index}}"  >
+    </textarea>
+  <!-- </view> -->
+</view>
+
+</view>
+<view>
+    <button class='submit-form' size='60%' form-type='submit' bindtap="submit" style='background-color:#1879E0'>发送</button>
+  </view>
+  
+</view>
+<i-modal wx:if="{{ visible }}" visible="{{ visible }}"
+  show-ok="{{false}}" show-cancel="{{false}}">
+   <view  class="people-title">
+    <text class="title-left">请选择接收人</text> 
+      <icon type="clear" class='modal-close' size="20" bindtap='closeModal'/>
+      <view class='clear-float'></view>
+    </view>
+
+    <view  > 
+    <radio-group   bindchange="listenerRadioGroup"  class='checkbox' >
+    <view class="check_persons">
+    <view wx:for="{{persons}}" wx:key="index" class="checkbox-group">
+       <image  class='image' src='/assects/avater.png'></image >
+   
+   <!-- <label wx:if = "{{chooseContent}}" class="radio"  >
+      <radio  class="checkbox" checked='{{currentReceiveUserId==item.usid?true:false}}' value='{{item.usid}}:{{item.usname}}'>{{item.usname}}</radio >
+  </label>
+   <label wx:else class="radio"  >
+      <radio  class="checkbox"  value='{{item.usid}}:{{item.usname}}'>{{item.usname}}</radio >
+    </label> -->
+    <label class="radio" >
+      <radio  class="checkbox" checked='{{currentReceiveUserId==item.usid?true:false}}' value='{{item.usid}}:{{item.usname}}'>{{item.usname}}</radio >
+  </label>
+
+  </view>
+  </view>
+  </radio-group >
+
+  <view >
+    <button class='submit-form' size='80%' form-type='submit2' bindtap="submit2" style='background-color:#1879E0'>确定</button>
+  </view>
+    </view>
+</i-modal>
